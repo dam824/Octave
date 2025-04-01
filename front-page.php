@@ -27,7 +27,12 @@ $header_post = Timber::get_posts([
 
 $context['header_post'] = $header_post[0] ?? null;
 
- 
+$context['posts'] = Timber::get_posts([
+    'post_type' => 'post',
+    'posts_per_page' => 7,
+    'orderby' => 'date',
+    'order' => 'ASC'
+]);
 
 Timber::render('home.twig', $context)
 
