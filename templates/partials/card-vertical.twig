@@ -1,32 +1,29 @@
-<article class="w-[412px] h-[540px] rounded-lg overflow-hidden shadow-sm bg-white flex flex-col">
+<article class="w-full rounded-lg overflow-hidden shadow-sm bg-white flex flex-col">
   {% if post.thumbnail %}
-    <div class="relative">
-      <img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}"
-           class="w-[412px] h-[314px] object-cover" />
+    <div class="relative w-full h-[300px] md:h-[314px]">
+      <img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" class="w-full h-full object-cover" />
       
-      {# Badge  #}
+      {# Badge #}
       {% set main_cat = post.terms('category')|filter(c => c.parent == 0)|first %}
-     {% if main_cat %}
-  <span class="{% if main_cat.name == 'Case Studies' %}
-                 bg-white text-black
-               {% else %}
-                 bg-[#451DC7] text-white
-               {% endif %} 
-               text-xs font-semibold px-4 py-1 rounded-full uppercase tracking-wide absolute top-4 left-4">
-    {{ main_cat.name }}
-  </span>
-{% endif %}
+      {% if main_cat %}
+        <span class="{% if main_cat.name == 'Case Studies' %}
+                       bg-white text-black
+                     {% else %}
+                       bg-[#451DC7] text-white
+                     {% endif %} 
+                     text-xs font-semibold px-4 py-1 rounded-full uppercase tracking-wide absolute top-4 left-4">
+          {{ main_cat.name }}
+        </span>
+      {% endif %}
     </div>
   {% endif %}
 
-  {# card body #}
   <div class="{% if main_cat and main_cat.name == 'Case Studies' %}
                 bg-white text-black
               {% else %}
                 bg-gradient-to-r from-[#451DC7] to-[#250F6B] text-white
               {% endif %} p-6 flex flex-col flex-1">
 
-    {# Sous cat #}
     {% set souscats = post.terms('category')|filter(c => c.parent != 0) %}
     {% if souscats %}
       <p class="{% if main_cat and main_cat.name == 'Case Studies' %}
@@ -53,7 +50,7 @@
                                           text-white
                                         {% endif %} text-[16px] leading-[20px] font-medium font-poppins relative group">
         Read more
-        <span class="block h-[2px] w-full bg-[#04F06A] mt-1"></span>
+        <span class="inline-block h-[2px] bg-[#04F06A] mt-1 w-fit"></span>
       </a>
     </div>
   </div>
