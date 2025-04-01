@@ -1,11 +1,12 @@
 {% extends "base.twig" %}
 
 {% block content %}
-
+   
 <section class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 to-teal-400">
-  <h1 class="text-5xl font-extrabold text-white drop-shadow-lg">
-    test tailwind 
-  </h1>
+ {% if header_post %}
+    {% include 'partials/block-header.twig' %}
+    {% endif %}
+ 
 </section>
 
 
