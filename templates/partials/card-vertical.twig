@@ -43,15 +43,11 @@
       {{ post.title }}
     </h3>
 
-    <div class="mt-auto flex justify-start">
-      <a href="{{ post.link }}" class="{% if main_cat and main_cat.name == 'Case Studies' %}
-                                          text-black
-                                        {% else %}
-                                          text-white
-                                        {% endif %} text-[16px] leading-[20px] font-medium font-poppins relative group">
-        Read more
-        <span class="inline-block h-[2px] bg-[#04F06A] mt-1 w-fit"></span>
-      </a>
-    </div>
+<div class="mt-auto">
+  <a href="{{ post.link }}"
+     class="{% if main_cat and main_cat.name == 'Case Studies' %}text-black{% else %}text-white{% endif %} text-[16px] leading-[20px] font-medium font-poppins inline-block border-b-2 border-[#04F06A]">
+    Read more
+  </a>
+</div>
   </div>
 </article>
