@@ -34,6 +34,10 @@ $context['posts'] = Timber::get_posts([
     'order' => 'ASC'
 ]);
 
+//récup acf offset template
+
+$context['offset_layout'] = get_field('offset_layout', get_the_ID());
+
 Timber::render('home.twig', $context)
 
 

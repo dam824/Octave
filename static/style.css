@@ -59,6 +59,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-teal-400: oklch(77.7% 0.152 181.912);
+    --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-indigo-50: oklch(96.2% 0.018 272.314);
     --color-indigo-500: oklch(58.5% 0.233 277.117);
     --color-black: #000;
@@ -299,14 +300,23 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .mt-0 {
+    margin-top: calc(var(--spacing) * 0);
+  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
   .mt-50 {
     margin-top: calc(var(--spacing) * 50);
   }
+  .mt-\[30px\] {
+    margin-top: 30px;
+  }
   .mt-\[50\] {
     margin-top: 50;
+  }
+  .mt-\[60px\] {
+    margin-top: 60px;
   }
   .mt-\[100px\] {
     margin-top: 100px;
@@ -389,6 +399,15 @@
   .flex-col {
     flex-direction: column;
   }
+  .flex-col-reverse {
+    flex-direction: column-reverse;
+  }
+  .flex-row {
+    flex-direction: row;
+  }
+  .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
   .items-center {
     align-items: center;
   }
@@ -433,12 +452,19 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .border-b-2 {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
   }
   .border-\[\#04F06A\] {
     border-color: #04F06A;
+  }
+  .border-blue-500 {
+    border-color: var(--color-blue-500);
   }
   .bg-\[\#451DC7\] {
     background-color: #451DC7;
@@ -628,6 +654,16 @@
       margin-top: calc(var(--spacing) * 0);
     }
   }
+  .md\:mt-\[30px\] {
+    @media (width >= 48rem) {
+      margin-top: 30px;
+    }
+  }
+  .md\:mt-\[60px\] {
+    @media (width >= 48rem) {
+      margin-top: 60px;
+    }
+  }
   .md\:grid {
     @media (width >= 48rem) {
       display: grid;
@@ -688,6 +724,11 @@
       flex-direction: row;
     }
   }
+  .md\:flex-row-reverse {
+    @media (width >= 48rem) {
+      flex-direction: row-reverse;
+    }
+  }
   .md\:items-stretch {
     @media (width >= 48rem) {
       align-items: stretch;
@@ -706,6 +747,11 @@
   .md\:p-10 {
     @media (width >= 48rem) {
       padding: calc(var(--spacing) * 10);
+    }
+  }
+  .md\:px-0 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 0);
     }
   }
   .md\:px-10 {
