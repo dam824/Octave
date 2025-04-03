@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.scrollY;
+        
     const scrollPercent = Math.min(currentScroll / maxScroll, 1);  
     const draw = pathLength * scrollPercent;
     path.style.strokeDashoffset = pathLength - draw;
