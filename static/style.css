@@ -75,6 +75,7 @@
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
+    --font-weight-bold: 700;
     --font-weight-extrabold: 800;
     --tracking-normal: 0em;
     --tracking-wide: 0.025em;
@@ -303,6 +304,9 @@
   .mt-0 {
     margin-top: calc(var(--spacing) * 0);
   }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -332,6 +336,9 @@
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
   }
   .mb-6 {
     margin-bottom: calc(var(--spacing) * 6);
@@ -363,6 +370,18 @@
   .h-\[300px\] {
     height: 300px;
   }
+  .h-\[314px\] {
+    height: 314px;
+  }
+  .h-\[540px\] {
+    height: 540px;
+  }
+  .h-\[541px\] {
+    height: 541px;
+  }
+  .h-\[556px\] {
+    height: 556px;
+  }
   .h-auto {
     height: auto;
   }
@@ -378,6 +397,15 @@
   .w-4 {
     width: calc(var(--spacing) * 4);
   }
+  .w-\[412px\] {
+    width: 412px;
+  }
+  .w-\[434px\] {
+    width: 434px;
+  }
+  .w-\[637px\] {
+    width: 637px;
+  }
   .w-full {
     width: 100%;
   }
@@ -386,6 +414,12 @@
   }
   .max-w-\[1316px\] {
     max-width: 1316px;
+  }
+  .max-w-full {
+    max-width: 100%;
+  }
+  .max-w-none {
+    max-width: none;
   }
   .flex-1 {
     flex: 1;
@@ -502,6 +536,9 @@
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
+  .px-\[40px\] {
+    padding-inline: 40px;
+  }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
   }
@@ -510,6 +547,9 @@
   }
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
+  }
+  .py-\[8px\] {
+    padding-block: 8px;
   }
   .pt-6 {
     padding-top: calc(var(--spacing) * 6);
@@ -540,8 +580,14 @@
   .text-\[26px\] {
     font-size: 26px;
   }
+  .text-\[40px\] {
+    font-size: 40px;
+  }
   .text-\[49px\] {
     font-size: 49px;
+  }
+  .text-\[50px\] {
+    font-size: 50px;
   }
   .text-\[140px\] {
     font-size: 140px;
@@ -561,6 +607,10 @@
   .leading-\[140px\] {
     --tw-leading: 140px;
     line-height: 140px;
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
   }
   .font-light {
     --tw-font-weight: var(--font-weight-light);
@@ -606,6 +656,9 @@
   }
   .text-\[\#451DC7\] {
     color: #451DC7;
+  }
+  .text-\[px\] {
+    color: px;
   }
   .text-black {
     color: var(--color-black);

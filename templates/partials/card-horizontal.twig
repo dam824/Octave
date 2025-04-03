@@ -1,41 +1,63 @@
 <article class="w-full max-w-[1316px] h-auto md:h-[540px] rounded-lg overflow-hidden shadow-sm flex flex-col md:flex-row">
   {% set main_cat = post.terms('category')|filter(c => c.parent == 0)|first %}
 
-  {% if post.thumbnail %}
-    <div class="relative w-full md:w-1/2 h-[300px] md:h-full">
-      <img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" class="w-full h-full object-cover" />
+    {# image #}
+ {% if post.thumbnail %}
+  <div class="relative
+              {% if main_cat.name == 'Insights' %}
+                w-[637px] h-[541px]
+              {% elseif main_cat.name == 'Case Studies' %}
+                w-[434px] h-[556px]
+              {% else %}
+                w-full h-[300px] md:h-full
+              {% endif %}">
+    <img src="{{ post.thumbnail.src('large') }}"
+         alt="{{ post.thumbnail.alt }}"
+         class="w-full h-full object-cover" />
 
-      {% if main_cat %}
-        <span class="absolute top-4 left-4 {% if main_cat.name == 'Case Studies' %}bg-white text-black{% else %}bg-[#451DC7] text-white{% endif %} text-xs font-semibold px-4 py-1 rounded-full uppercase tracking-wide">
-          {{ main_cat.name }}
-        </span>
-      {% endif %}
-    </div>
-  {% endif %}
-
-  <div class="w-full md:w-1/2 flex flex-col {% if main_cat and main_cat.name == 'Case Studies' %}bg-white text-black{% else %}bg-gradient-to-r from-[#451DC7] to-[#250F6B] text-white{% endif %} p-6 md:p-10">
+    {% if main_cat %}
+      <span class="absolute top-4 left-4 
+                   {% if main_cat.name == 'Case Studies' %}
+                     bg-white text-black
+                   {% else %}
+                     bg-[#451DC7] text-white
+                   {% endif %}
+                   text-xs font-semibold px-4 py-1 rounded-full uppercase tracking-wide">
+        {{ main_cat.name }}
+      </span>
+    {% endif %}
+  </div>
+{% endif %}
+     {#  corps card #}
+<div class="w-full md:w-1/2 flex items-center justify-center px-[40px] py-[8px] {% if main_cat and main_cat.name == 'Case Studies' %}bg-white text-black{% else %}bg-gradient-to-r from-[#451DC7] to-[#250F6B] text-white{% endif %}">
+  <div class="flex flex-col items-start gap-2">
     {% set souscats = post.terms('category')|filter(c => c.parent != 0) %}
     {% if souscats %}
-      <p class="{% if main_cat and main_cat.name == 'Case Studies' %}text-[#5D2CEC]{% else %}text-[#04F06A]{% endif %} uppercase text-xs tracking-wider font-semibold mb-2">
+      <p class="{% if main_cat and main_cat.name == 'Case Studies' %}text-[#5D2CEC]{% else %}text-[#04F06A]{% endif %} uppercase text-xs tracking-wider font-semibold">
         {{ souscats|map(t => t.name)|join(' · ') }}
       </p>
     {% endif %}
 
-    <h2 class="{% if main_cat and main_cat.name == 'Case Studies' %}text-black{% else %}text-white{% endif %} font-poppins font-normal text-[49px] leading-[60px] tracking-[-0.05em] mb-6">
+    <h2 class="
+      font-poppins 
+      tracking-[-0.05em] 
+      {% if main_cat and main_cat.name == 'Case Studies' %}
+        text-black text-[26px] leading-[30px] font-normal
+      {% else %}
+        text-white text-[50px] leading-[60px] font-normal
+      {% endif %}
+    ">
       {{ post.title }}
     </h2>
 
-     
-    <div class="mt-auto ">
-      <a href="{{ post.link }}"
-        class="{% if main_cat and main_cat.name == 'Case Studies' %}
-                  text-black
-                {% else %}
-                  text-white
-                {% endif %} text-[16px] leading-[20px] font-medium font-poppins inline-block border-b-2 border-[#04F06A]">
-        Read more
-      </a>
-    </div>
-
+    <a href="{{ post.link }}"
+      class="{% if main_cat and main_cat.name == 'Case Studies' %}
+                text-black
+              {% else %}
+                text-white
+              {% endif %} text-[16px] leading-[20px] font-medium font-poppins inline-block border-b-2 border-[#04F06A] mt-2">
+      Read more
+    </a>
   </div>
+</div>
 </article>
