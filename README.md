@@ -8,4 +8,4 @@ Intégration de maquette avec différents affichages.
 ![Offset 2](https://github.com/dam824/Octave/raw/main/static/images/offset-2.png)
 
 ## Display option in edit page  
-![Display option](https://github.com/dam824/Octave/raw/main/static/images/offset-2.png)
+![Display option](https://github.com/dam824/Octave/raw/main/static/images/edit.png)
