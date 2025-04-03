@@ -30,9 +30,15 @@ class OctaveSite extends Site
         // Fichier CSS généré par Tailwind
         wp_enqueue_style('tailwind', get_template_directory_uri() . '/static/style.css');
 
-
-         
+        
         //  JS plus tard
+        wp_enqueue_script(
+          'main-js',
+          get_template_directory_uri() . '/static/js/main.js',
+          [],  
+          false,  
+          true  
+        );
          
          
     }

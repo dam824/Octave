@@ -2,6 +2,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
 .container-custom {
-    @apply w-full max-w-[1440px] mx-auto px-6 md:px-10 lg:px-20;
-  }
-  
+  @apply w-full max-w-[1316px] mx-auto px-[20px];
+}
